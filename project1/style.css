@@ -1,0 +1,76 @@
+*{
+  margin: 0;
+  font-family: sans-serif;
+  
+}
+body{
+  background-color: #c4c4c4;
+}
+header{
+  background-image: url(/project1/bg-3.jpg);
+  background-position: right center;
+  background-size: cover;
+  color: aliceblue;
+}
+#nav{
+  padding: 10rem 0;
+  text-align: center;
+}
+#nav h1{
+  color: aliceblue;
+  margin-bottom: 4.5rem;
+  text-align: center;
+  text-shadow: 2px 2px 2px black;
+  text-transform: uppercase;
+}
+#nav a{
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #2020209e;
+  padding: 1rem;
+  border-bottom: 1px solid #ffffff;
+}
+header nav a{
+  color: aliceblue;
+  text-decoration: none;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 2rem 4rem;
+}
+nav ul li{
+  background-color: #868686;
+  margin-left: 2rem;
+  padding: 0.5rem 1rem;
+}
+nav ul li a{
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#sec1, #sec2, #sec3{
+  background-color: #ffffff;
+  margin: 1rem auto 2rem auto;
+  width: 80%;
+  padding: 1rem 1rem 1.5rem 1rem;
+}
+section h2{
+  background-color: #dddbdb;
+  padding: 0.5rem;
+}
+section p{
+margin: 1rem 0;
+}
+section a{
+  background-color: #c0c0c0;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+footer{
+  background-color: #545454;
+  padding: 2rem 0;
+  text-align: center;
+  
+}
