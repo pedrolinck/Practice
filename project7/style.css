@@ -1,0 +1,144 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #e9e9e9;
+}
+:root{
+  --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --text: #2a2a2a;
+  --color: #fed001;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--text);
+  padding: 1rem;
+}
+.logo, ul{
+  margin-left: 3rem; 
+  margin-right: 3rem;
+}
+.list{
+  list-style: none;
+  border: 1px solid var(--color);
+  display: inline-block;
+  padding: .5rem;
+  margin-left: .5rem;
+}
+.list-item{
+  color: var(--color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: var(--font);
+}
+.title{
+  background-image: url(/project7/img/HeroImage.png);
+  height: calc(100vh);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color:  rgba(254, 208, 1, 0.667) ;
+  font-family: var(--font);
+  color: #2A2A2A;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3rem;
+}
+.title h1{
+  font-size: 4rem;
+  width: 32rem;
+  color: var(--text);
+}
+.title a{
+  text-decoration: none;
+  color: var(--text);
+  padding: 1rem;
+  background-color: var(--color);
+  width: max-content;
+  margin-top: 1rem;
+}
+.courses{
+  display: flex;
+  flex-direction: column;
+}
+.courses h1{
+  text-align: center;
+  font-family: var(--font);
+  margin: 6rem 0;
+  font-size: 3rem;
+}
+.cards{
+  display: flex;
+  flex-direction: row;
+  width: min-content;
+  gap: 2rem;
+  margin: auto;
+  font-family: var(--font);
+}
+.card{
+  background-color: #ffffff;
+}
+.cards h3, p{
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+.more-courses{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 4rem 0;
+}
+.more-courses a{
+  text-decoration: none;
+  font-family: var(--font);
+  font-weight: bold;
+  color: var(--text);
+  background-color: var(--color);
+  padding: 1rem 2rem;
+}
+.school{
+  font-family: var(--font);
+  background-image: url(/project7/img/nossa-escola.png);
+  height: 75vh;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-color: #0e3467;
+}
+.school div{
+  width: 40%;
+  color: #e9e9e9;
+  margin: 0 2rem 0 auto;
+  border: 1px solid red;
+}
+.contact{
+  font-family: var(--font);
+  text-align: center;
+  margin: 1rem 2rem;
+  height: 100vh;
+}
+.contact h1{
+  margin: 3rem 0;
+}
+.contact p{
+  text-align: end;
+  margin: 0;
+}
+map{
+  height: 80vh;
+  width: 80vw;
+  background-color: #2A2A2A;
+}
+footer{
+  text-align: center;
+  background-color: #2A2A2A;
+  padding: 1rem ;
+  height: 4rem;
+  color: #e9e9e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
