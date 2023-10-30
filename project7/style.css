@@ -17,6 +17,9 @@ nav{
   align-items: center;
   background-color: var(--text);
   padding: 1rem;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 .logo, ul{
   margin-left: 3rem; 
@@ -36,11 +39,11 @@ nav{
   font-family: var(--font);
 }
 .title{
-  background-image: url(/project7/img/HeroImage.png);
-  height: calc(100vh);
+  background-image: linear-gradient(#ffffff00, #fed001c4), url(/project7/img/HeroImage.png) ;
   background-repeat: no-repeat;
   background-position: right;
-  background-color:  rgba(254, 208, 1, 0.667) ;
+  background-size: contain;
+  height: calc(100vh);
   font-family: var(--font);
   color: #2A2A2A;
   display: flex;
