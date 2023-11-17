@@ -1,0 +1,46 @@
+body{
+  background-color: #2f2f2f;
+  font-family: Arial, Helvetica, sans-serif;
+}
+form{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: 0 auto;
+}
+fieldset{
+  background-color: #1c1c1c;
+  border: none;
+}
+legend{
+  text-align: center;
+  padding-top: 4rem;
+  color: #cccccc;
+}
+label{
+  color: #f0f8ff;
+  
+}
+input{
+  background-color: #131313;
+  width: 100%;
+  color: #2a2a2a;
+  margin-bottom: 1rem;
+  border: none;
+  padding: .5rem 0 .5rem .5rem;
+  border-bottom: 3px solid #4c4c4c;
+}
+textarea{
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: #151515;
+  border: none;
+  border-bottom: 3px solid #4c4c4c;
+}
+button{
+  color: #cccccc;
+  background-color: #313131;
+  padding: .5rem 1rem;
+  border: none;
+  margin-left: auto;
+}
