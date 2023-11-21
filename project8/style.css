@@ -19,7 +19,6 @@ legend{
 }
 label{
   color: #f0f8ff;
-  
 }
 input{
   background-color: #131313;
@@ -27,20 +26,30 @@ input{
   color: #2a2a2a;
   margin-bottom: 1rem;
   border: none;
-  padding: .5rem 0 .5rem .5rem;
+  padding: 5px;
+  padding-right: 0;
   border-bottom: 3px solid #4c4c4c;
+  color: white;
+}
+input:invalid,textarea:invalid{
+  border-bottom: 2px solid red;
+}
+input:focus, textarea:focus{
+  background-color: #2a2727;
+  border-bottom: 2px solid #8e999a;
 }
 textarea{
+  color: white;
   width: 100%;
   margin-bottom: 1rem;
   background-color: #151515;
   border: none;
   border-bottom: 3px solid #4c4c4c;
 }
-button{
+#submit{
   color: #cccccc;
   background-color: #313131;
-  padding: .5rem 1rem;
   border: none;
-  margin-left: auto;
+  width: 20%;
+  cursor: pointer;
 }
