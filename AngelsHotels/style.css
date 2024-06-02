@@ -1,10 +1,12 @@
 *{
+  box-sizing: border-box;
   margin: 0;
   font-family: sans-serif;
 }
 
 :root{
   --padding-default: 1rem 0;
+  --button-padding: .7rem 2rem;
   --primary-color: #612674;
 }
 .header{
@@ -23,63 +25,85 @@
   padding: 0;
 }
 
-.nav .list{
-  display: flex;
-  padding: 0;
-}
 
 .nav a{
   color: #FFF;
   text-decoration: none;
-  background-color: aquamarine;
   display: block;
-  width: 100vw;
-  padding: 1rem 0;
+  padding: 1rem;
+}
 
+.nav a:hover{
+  background-color: #61446b;
+}
+
+.cards{
+  background-color: rgb(218, 218, 218);
+  text-align: center;
+  padding: 2rem 1rem ;
+  
+}
+
+.card .title{
+  color: var(--primary-color);
+}
+
+.card .main_content{
+  padding: var(--padding-default);
+  margin: 1rem 0;
+}
+
+.card .button{
+  text-decoration: none;
+  color: #FFF;
+  padding: var(--button-padding);
+  background-color: #61446b;
+  border-radius: .5rem;
 }
 
 
-@media screen and (min-width: 30.75rem) {
- .header{
-    width: 100vw;
- }
-
+@media screen and (width >= 30.75rem) {
  .nav{
     text-align: center;
  }
+ .nav .list{
+  width: 100vw;
+  padding: 0;
+ }
 }
 
-@media screen and (min-width: 45rem) {
+@media screen and (width >= 45rem) {
   .nav{
-    padding: var(--padding-default);
+    width: 100vw;
   }
   .nav .list-item{
-    padding: var(--padding-default);
     font-size: 1.4rem;
   }
 }
 
-@media screen and (min-width: 64rem) {
+@media screen and (width >= 64rem) {
   .header{
     display: flex;
     padding: var(--padding-default);
   }
   .nav{
     background-color: transparent;
-    width: 100%;
   }
   .nav .list {
-    border: 1px solid red;
+    display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
     width: 100%;
-    justify-content: space-around;
+    
   }
   .nav .list-item{
     padding: 0;
   }
   .nav .list-item a{
-    color: #000;
-    width: auto;
+    padding: 1rem 2rem;
+    color: var(--primary-color);
   }
   .nav .list-item a:hover{
     background-color: color-mix(in srgb, var(--primary-color), #FFF 85%);
