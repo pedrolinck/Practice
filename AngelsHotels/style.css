@@ -9,6 +9,11 @@
   --button-padding: .7rem 2rem;
   --primary-color: #612674;
 }
+
+h1,h2,h3,h4{
+  color: #612674;
+}
+
 .header{
   max-width: 70rem;
   margin: auto;
@@ -38,7 +43,7 @@
 }
 
 .cards{
-  background-color: rgb(218, 218, 218);
+  background-color: #F6F6F6;
   text-align: center;
   padding: 2rem 1rem ;
   
@@ -57,7 +62,7 @@
   text-decoration: none;
   color: #FFF;
   padding: var(--button-padding);
-  background-color: #61446b;
+  background-color: #58C4C4;
   border-radius: .5rem;
 }
 
@@ -70,14 +75,40 @@
   width: 100vw;
   padding: 0;
  }
+ .icon_play{
+  display: none;
+ }
 }
 
 @media screen and (width >= 45rem) {
+  .header{
+    display: flex;
+  }
   .nav{
     width: 100vw;
+    background-color: transparent;
   }
-  .nav .list-item{
-    font-size: 1.4rem;
+  .nav .list{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: center;
+    padding-right: 1remf;
+  }
+  .nav .list-item a{
+    padding: 1rem 2rem;
+    color: var(--primary-color);
+  }
+  .nav .list-item a:hover{
+    background-color: color-mix(in srgb, var(--primary-color), #FFF 85%);
+  }
+  .icon_play{
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .icon_play img{
+    width: 40%;
   }
 }
 
