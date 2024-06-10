@@ -6,6 +6,7 @@
 
 :root{
   --padding-default: 1rem 0;
+  --margin-bottom: 1rem;
   --button-padding: .7rem 2rem;
   --primary-color: #612674;
 }
@@ -45,8 +46,19 @@ h1,h2,h3,h4{
 .cards{
   background-color: #F6F6F6;
   text-align: center;
-  padding: 2rem 1rem ;
-  
+  padding: 2rem ;
+}
+
+.card{
+  margin-bottom: 3rem;
+}
+
+.card img{
+  margin-bottom: var(--margin-bottom);
+}
+
+.card h2{
+  margin-bottom: var(--margin-bottom);
 }
 
 .card .title{
@@ -65,6 +77,35 @@ h1,h2,h3,h4{
   background-color: #58C4C4;
   border-radius: .5rem;
 }
+
+.option{
+  background-color: #FFF;
+}
+
+.option img{
+  width: 100%;
+}
+
+.option .card h3{
+  text-align: left;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 4px;
+}
+
+
+footer{
+  background-color: #25303E;
+  color: #5C899F;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+footer > p{
+  padding-bottom: 1rem
+}
+
 
 
 @media screen and (width >= 30.75rem) {
