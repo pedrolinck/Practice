@@ -6,6 +6,7 @@
 
 :root{
   --padding-default: 1rem 0;
+  --content-padding: 0 2rem;
   --margin-bottom: 1rem;
   --button-padding: .7rem 2rem;
   --primary-color: #612674;
@@ -46,20 +47,16 @@ h1,h2,h3,h4{
 .cards{
   background-color: #F6F6F6;
   text-align: center;
-  padding: 2rem ;
 }
 
 .card{
-  margin-bottom: 3rem;
+  padding: 2rem;
 }
 
-.card img{
+.card img, h2{
   margin-bottom: var(--margin-bottom);
 }
 
-.card h2{
-  margin-bottom: var(--margin-bottom);
-}
 
 .card .title{
   color: var(--primary-color);
@@ -92,6 +89,10 @@ h1,h2,h3,h4{
   text-transform: uppercase;
   font-weight: 100;
   letter-spacing: 4px;
+}
+
+.find{
+  padding: 2rem;
 }
 
 
@@ -135,7 +136,7 @@ footer > p{
     justify-content: flex-end;
     width: 100%;
     align-items: center;
-    padding-right: 1remf;
+    padding-right: 1rem;
   }
   .nav .list-item a{
     padding: 1rem 2rem;
@@ -151,6 +152,28 @@ footer > p{
   .icon_play img{
     width: 40%;
   }
+  .find{
+    background-color: #612674;
+    width: 100%;
+  }
+  .card .title, .main_content{
+    color: #FFF;
+  }
+  .options{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .options .card{
+    width: 25rem;
+  }
+  .option .card{
+    display: flex;
+    flex-direction: row;
+  }
+  .option img{
+    width: 7rem;
+  }
+ 
 }
 
 @media screen and (width >= 64rem) {
