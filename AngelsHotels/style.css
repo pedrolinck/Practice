@@ -6,8 +6,7 @@
 
 :root{
   --padding-default: 1rem 0;
-  --content-padding: 0 2rem;
-  --margin-bottom: 1rem;
+  --margin-bottom: 2rem;
   --button-padding: .7rem 2rem;
   --primary-color: #612674;
 }
@@ -27,9 +26,15 @@ h1,h2,h3,h4{
   background-color: var(--primary-color);
 }
 
+.nav .list{
+  padding: 0;
+  width: 100%;
+}
+
 .nav .list-item{
   list-style-type: none;
   padding: 0;
+  text-align: center;
 }
 
 
@@ -44,26 +49,34 @@ h1,h2,h3,h4{
   background-color: #61446b;
 }
 
-.cards{
+.options {
   background-color: #F6F6F6;
   text-align: center;
-}
-
-.card{
   padding: 2rem;
+}
+.options a{
+  text-decoration: none;
+}
+.options span, h2{
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+.options span[class^="icon-"]{
+  font-size: 3.5rem;
+}
+.options p{
+  color: #000;
+  margin: 1rem 0;
+}
+.options h2{
+  margin: 1.5rem 0;
 }
 
 .card img, h2{
   margin-bottom: var(--margin-bottom);
 }
 
-
-.card .title{
-  color: var(--primary-color);
-}
-
 .card .main_content{
-  padding: var(--padding-default);
   margin: 1rem 0;
 }
 
@@ -72,111 +85,189 @@ h1,h2,h3,h4{
   color: #FFF;
   padding: var(--button-padding);
   background-color: #58C4C4;
-  border-radius: .5rem;
-}
-
-.option{
-  background-color: #FFF;
-}
-
-.option img{
-  width: 100%;
+  border-radius: .3rem;
 }
 
 .option .card h3{
   text-align: left;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   font-weight: 100;
   letter-spacing: 4px;
 }
 
-.find{
-  padding: 2rem;
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
+.col{
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.col-sm-12{
+  width: 100%;
+}
 
 footer{
   background-color: #25303E;
   color: #5C899F;
-  padding: 3rem 0;
   text-align: center;
+  padding: 2rem;
 }
 
-footer > p{
-  padding-bottom: 1rem
+.footer_content{
+  margin-top: 1rem;
 }
 
-
-
-@media screen and (width >= 30.75rem) {
- .nav{
-    text-align: center;
- }
- .nav .list{
-  width: 100vw;
-  padding: 0;
- }
+/* small screen */
+@media screen and (min-width: 30.75rem) {
+  .image{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .image img{
+    display: block;
+  }
  .icon_play{
   display: none;
  }
+ .find{
+  text-align: center;
+  padding: 2rem 0;
+ }
+ .find .main_content{
+  color: var(--primary-color);
+  line-height: 1.5rem;
+ }
+ .find .button{
+  display: inline-block;
+ }
+ .options p{
+  line-height: 1.5rem;
+ }
+ .card_content p{
+  text-align: left;
+ }
+ .option{
+  padding: 2rem;
+ }
+ .option .card{
+  margin-bottom: 4rem;
+ }
+ .option .card_img img{
+  width: 100%;
+ }
 }
 
-@media screen and (width >= 45rem) {
+/* changing for 2º content on small screen */
+@media screen and (min-width: 36.25rem){
+.option .card{
+  display: flex;
+  gap: 1rem;
+}
+}
+
+
+/* medium */
+@media screen and (min-width: 48.75rem) {
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav .list{
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+  }
+  .nav .list a{
+    color: var(--primary-color);
+  }
+  .nav .list a:hover{
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  .image{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .image img{
+    display: block;
+  }
+  .find{
+    background-color: var(--primary-color);
+    padding: 1rem;
+    text-align: center;
+  }
+  .find .title, .find .main_content{
+    color: #FFF;
+  }
+  .find .button{
+    display: inline-block;
+  }
+  .icon_play{
+    display: block;
+  }
+  .icon_play img{
+    width: 12%;
+  }
+  
+  .option .card{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .col-md-6{
+    width: calc(50% - 1rem);
+  }
+}
+/* large */
+@media screen and (min-width: 56.25rem) {
   .header{
     display: flex;
   }
   .nav{
-    width: 100vw;
     background-color: transparent;
+    justify-content: flex-end;
   }
   .nav .list{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    width: 100%;
     align-items: center;
-    padding-right: 1rem;
   }
   .nav .list-item a{
-    padding: 1rem 2rem;
     color: var(--primary-color);
   }
   .nav .list-item a:hover{
     background-color: color-mix(in srgb, var(--primary-color), #FFF 85%);
   }
-  .icon_play{
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-  .icon_play img{
-    width: 40%;
+  .card_top{
+    background: url(/AngelsHotels/images/bg_topo_1198x670.jpg) ;
+    background-size: cover;
+    aspect-ratio: 1198 / 670;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    max-height: 80vh;
+    width: 100%;
   }
   .find{
-    background-color: #612674;
-    width: 100%;
+    background-color: transparent;
+    width: 50%;
+    margin-bottom: 4rem;
   }
   .card .title, .main_content{
     color: #FFF;
   }
-  .options{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .options .card{
-    width: 25rem;
-  }
-  .option .card{
-    display: flex;
-    flex-direction: row;
-  }
-  .option img{
-    width: 7rem;
-  }
- 
 }
 
-@media screen and (width >= 64rem) {
+/* extra large */
+@media screen and (min-width: 73.75rem) {
   .header{
     display: flex;
     padding: var(--padding-default);
@@ -202,5 +293,46 @@ footer > p{
   }
   .nav .list-item a:hover{
     background-color: color-mix(in srgb, var(--primary-color), #FFF 85%);
+  }
+  .card_top{
+    width: 100%;
+    background: url(/AngelsHotels/images/bg_topo_1600x1374.jpg);
+  }
+  
+  .find{
+    width: 50%;
+    text-align: center;
+  }
+ 
+  .auto-width{
+    margin: auto;
+  }
+  .col-xl-3{
+    width: calc(25% - 1rem);
+  }
+  .col-xl-6{
+    width: calc(50% - 1rem) ;
+  }
+  .option{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+.option .card{
+  container: main-content / inline-size;
+}
+
+@container main-content (min-width: 30rem){
+  .card_container{
+    display: flex;
+    gap: 1rem;
+  }
+  .card_img img{
+    max-height: 23.87rem;
+  }
+  .card_img{
+    flex: 0 0 25%;
   }
 }
