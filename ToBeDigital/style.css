@@ -7,12 +7,22 @@
 
 body{
   margin: 0;
+  background-image: 
+  radial-gradient(circle at left top, rgb(142 173 213 / .3), transparent 400px),
+  radial-gradient(circle at right center, rgb(142 173 213 / .3), transparent 400px);
 }
 
 .header{
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 3rem 1rem 2rem;
+}
+
+.header .navigation{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 
@@ -108,9 +118,10 @@ footer .social_media h3{
 
 /* small screens */
 @media screen and (width <= 46.1875rem) {
-  
   .navigation{
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
   .navigation .menu_list{
     display: flex;
@@ -119,6 +130,13 @@ footer .social_media h3{
     align-items: end;
     padding-left: 0;
     width: 100%;
+    position: absolute;
+    background-color: #CCC;
+    top: 100px;
+  }
+
+  .menu-btn{
+    position: relative;
   }
   
   .navigation .menu_list_item{
@@ -158,9 +176,13 @@ footer .social_media h3{
   .results .results_content{
     font-size: 1.1rem;
   }
+  .system_image,
+  .results_image{
+    width: 100%;
+  }
   .system_image img, 
   .results_image img{
-    width: 100%;
+    width: 70%;
   }
   .business{
     margin-bottom: 7rem;
@@ -201,6 +223,10 @@ footer .social_media h3{
 
 /* medium screens */
 @media screen and (width >= 46.25rem) {
+  .header{
+    display: flex;
+    flex-direction: row;
+  }
   .header_content h1{
     font-size: 3.5rem;
   }
@@ -209,7 +235,10 @@ footer .social_media h3{
     justify-content: center;
   }
   .header_image img{
-    width: 45%;
+    width: 50%;
+  }
+  .menu_icon, .menu-btn{
+    display: none;
   }
   .companies p{
     text-align: center;
@@ -234,7 +263,8 @@ footer .social_media h3{
   .results_image,
   .system_image img,
   .results_image img{
-    width: 75%;
+    
+    width: 100%;
   }
   .client_cards,
   .part,
@@ -285,6 +315,10 @@ footer .social_media h3{
     width: 100%;
     padding: 2rem;
   }
+  .results_image{
+    text-align: end;
+    width: 100%;
+  }
 }
 
 /* extra-large screens */
@@ -333,4 +367,53 @@ footer .social_media h3{
   .contact_title{
     margin-top: 0;
   }
+}
+
+
+/* hamburguer menu */
+.menu_list{
+  max-height: 0;
+  overflow: hidden;
+}
+
+
+@media screen and (width >= 46.25rem) {
+  .menu_list{
+    position: static;
+    max-height: initial;
+  }
+}
+
+
+.menu_icon{
+  position: relative;
+  cursor: pointer;
+  /* user-select: none; */
+}
+.nav_icon{
+  background-color: #000000;
+  display: inline-block;
+  height: 2px ;
+  width: 24px;
+  position: relative;
+  text-align: initial;
+
+}
+.nav_icon::after, .nav_icon::before{
+  content: "";
+  background-color: #333;
+  display: inline-block;
+  height: 2px ;
+  width: 24px;
+  position: absolute;
+}
+.nav_icon::after{
+  margin-right: 2rem;
+  background-color: blue;
+  transform: translateY(8px);
+}
+.nav_icon::before{
+  margin-right: 2rem;
+  background-color: red;
+  transform: translateY(-8px);
 }
