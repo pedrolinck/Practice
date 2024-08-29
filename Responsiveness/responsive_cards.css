@@ -1,0 +1,29 @@
+body{
+  box-sizing: border-box;
+  background-color: dimgray;
+}
+
+h1{
+  font-weight: 300;
+}
+
+.cards_container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card{
+  background-color: rgb(39, 39, 39);
+  color: white;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 860px){
+  .cards_container{
+    
+    flex-direction: row;
+    justify-content: center;
+    
+  }
+}
