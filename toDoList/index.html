@@ -3,24 +3,32 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>To Do List</title>
   </head>
   <body>
     <div class="container">
       <header class="header">
-        <h1 class="title"></h1>
+        <h1 class="title">to Do List</h1>
         <form action="">
-          <input type="text" class="input-item">
-          <button class="btn"></button>
+          <input placeholder="New Item" type="text" class="input-item">
+          <button class="btn">Add</button>
         </form>
       </header>
       <main>
         <ul class="list">
           <li class="list-item">
-            <input type="checkbox" name="" id="">
-            <p></p>
-            <button>edit, cancel</button>
-            <button>delete</button>
+            <input type="checkbox" name="teste" id="">
+            <p id="teste">teste</p>
+            <a href=""><i class="fas fa-edit"></i></a>
+            <!-- <div class="editItem">
+              <input class="editInput" type="text">
+              <button class="editButton">Edit</button>
+              <button class="cancelButton">Cancel</button>
+            </div> -->
+            <a href=""><i class="far fa-trash-alt"></i></a>
           </li>
         </ul>
       </main>
