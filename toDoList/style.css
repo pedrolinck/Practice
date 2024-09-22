@@ -52,3 +52,27 @@ form .btn{
   width: 100%;
   padding: .2rem .5rem;
 }
+
+.editContainer{
+  position: absolute;
+  
+  z-index: 2;
+  display: none;
+  width: 50%;
+  background-color: grey;
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+  border-radius: .2rem;
+}
+
+.editInput{
+  width: 100%;
+  border: 1px solid red;
+}
+
+.buttonEdit, .buttonCancel{
+  background-color: white;
+  padding: .2rem .7rem;
+  border-radius: .2rem;
+  color: green;
+}

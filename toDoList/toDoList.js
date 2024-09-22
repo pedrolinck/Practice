@@ -24,11 +24,48 @@
 
   function generateTask(obj){
     const li = document.createElement('li')
-    li.id = 'list-item'
     const p = document.createElement('p')
+    const checkButton = document.createElement('button')
+    const editButton = document.createElement('i')
+    const deleteButton = document.createElement('i')
+    const editContainer = document.createElement('editContainer')
+    const editInput = document.createElement('editInput')
+    const buttonEdit = document.createElement('buttonEdit')
+    const buttonCancel = document.createElement('cancelButton')
+
+    
+    li.id = 'list-item'
+
+    checkButton.className = 'button-check'
+    checkButton.innerHTML = '<i class = "fas fa-check displayNone"></i>'
+    li.appendChild(checkButton)
     p.id = 'teste'
     p.textContent = obj.name
     li.appendChild(p)
+
+    editButton.className = "fas fa-edit"
+    li.appendChild(editButton)
+   
+    deleteButton.className = "fas fa-trash-alt"
+    li.appendChild(deleteButton)
+
+     
+    editContainer.className = "editContainer"
+
+    editInput.setAttribute('type', 'text')
+    editInput.className = "editInput"
+    editContainer.appendChild(editInput)
+
+    buttonEdit.className = "buttonEdit"
+    buttonEdit.textContent = "Edit"
+    editContainer.appendChild(buttonEdit)
+
+    buttonCancel.className = "buttonCancel"
+    buttonCancel.textContent = "Cancel"
+    editContainer.appendChild(buttonCancel)
+
+    li.appendChild(editContainer)
+
     addEventLi(li)
 
     return li
