@@ -7,32 +7,60 @@
   const ul = document.getElementById('list');
   const lis = document.getElementsByTagName("li")
 
-  function addTask(task){
+  let arrTask = [
+    {
+      name: 'task',
+      createAt: Date.now(),
+      completed: false
+    }
+  ]
+
+  function addEventLi(li){
+    li.addEventListener('click', function(){
+      console.log(this)
+    })
+  }
+
+
+  function generateTask(obj){
     const li = document.createElement('li')
-    li.className = 'list-item'
+    li.id = 'list-item'
     const p = document.createElement('p')
-    p.className = 'teste'
-    p.textContent = task
+    p.id = 'teste'
+    p.textContent = obj.name
     li.appendChild(p)
-    ul.appendChild(li)
+    addEventLi(li)
+
+    return li
+  }
+
+  function renderTask(){
+    ul.innerHTML = ''
+    arrTask.forEach(task => {
+      ul.appendChild(generateTask(task))
+    });
+  }
+
+  function addTask(task){
+    arrTask.push({
+      name: task,
+      createAt: Date.now(),
+      completed: false
+    })
   }
 
   formList.addEventListener('submit', function(e) {
     e.preventDefault()
     // ul.innerHTML += `
-    //   <li class="list-item">
+    //   <li id="list-item">
     //     <p id="teste">${inputList.value}</p>
     //   </li>
     // `
-    
-    inputList.value = " ";
+    addTask(inputList.value)
+    renderTask()
+    inputList.value = "";
     inputList.focus();
   });
 
-  [...lis].forEach(element => {
-    element.addEventListener('click', function (e){
-      console.log(this)
-    })
-  });
-
+  renderTask()
 })()

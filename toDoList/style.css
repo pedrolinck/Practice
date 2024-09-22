@@ -34,11 +34,11 @@ form .btn{
   cursor: pointer;
 }
 
-.list{
+#list{
   padding: 0 1rem;
 }
 
-.list-item{
+#list-item{
   display: flex;
   flex-direction: row;
   align-items: center;
