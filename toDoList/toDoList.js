@@ -96,8 +96,19 @@
   }
 
   function clickUl(e){
-    console.log(e.target)
-    console.log(e.target.getAttribute('data-action'))
+    const dataAction = e.target.getAttribute('data-action')
+
+    if(!dataAction) return
+
+    let currentLi = e.target
+
+    while(currentLi.nodeName !== "LI"){
+      currentLi = currentLi.parentElement
+    }
+
+    const currentLiIndex = [...lis].indexOf(currentLi);
+
+
   }
 
   formList.addEventListener('submit', function(e) {
