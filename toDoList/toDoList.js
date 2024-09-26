@@ -28,16 +28,19 @@
     const checkButton = document.createElement('button')
     const editButton = document.createElement('i')
     const deleteButton = document.createElement('i')
-    const editContainer = document.createElement('editContainer')
+
+
+    const editContainerButton = document.createElement('editContainerButton')
+    // inside the container
     const editInput = document.createElement('editInput')
     const buttonEdit = document.createElement('buttonEdit')
-    const buttonCancel = document.createElement('cancelButton')
+    const buttonCancel = document.createElement('buttonCancel')
 
     
     li.id = 'list-item'
 
     checkButton.className = 'button-check'
-    checkButton.innerHTML = '<i class = "fas fa-check displayNone"></i>'
+    checkButton.innerHTML = '<i class = "fas fa-check displayNone" data-action="checkButton"></i>'
     checkButton.setAttribute('data-action', 'checkButton')
 
     li.appendChild(checkButton)
@@ -54,26 +57,27 @@
     li.appendChild(deleteButton)
 
      
-    editContainer.className = "editContainer"
-    editContainer.setAttribute('data-action', 'editContainer')
+    editContainerButton.className = "editContainer"
+    editContainerButton.setAttribute('data-action', 'editContainer')
 
 
     editInput.setAttribute('type', 'text')
     editInput.className = "editInput"
+    editInput.value = obj.name
 
-    editContainer.appendChild(editInput)
+    editContainerButton.appendChild(editInput)
 
     buttonEdit.className = "buttonEdit"
     buttonEdit.textContent = "Edit"
     buttonEdit.setAttribute('data-action', 'buttonEdit')
-    editContainer.appendChild(buttonEdit)
+    editContainerButton.appendChild(buttonEdit)
 
     buttonCancel.className = "buttonCancel"
     buttonCancel.textContent = "Cancel"
     buttonCancel.setAttribute('data-action', 'buttonCancel')
-    editContainer.appendChild(buttonCancel)
+    editContainerButton.appendChild(buttonCancel)
 
-    li.appendChild(editContainer)
+    li.appendChild(editContainerButton)
 
     // addEventLi(li)
 
@@ -108,7 +112,50 @@
 
     const currentLiIndex = [...lis].indexOf(currentLi);
 
+    const actions = {
+      editButton: function (){
+        const editContainerButton = currentLi.querySelector('.editContainerButton');
 
+        [...ul.querySelectorAll('.editContainerButton')].forEach(container => {
+          container.removeAttribute("style")
+        })
+
+        editContainerButton.style.display = 'flex';
+        editInput.focus();
+
+      },
+
+      deleteButton: function(){
+        arrTask.splice(currentLiIndex, 1)
+        renderTask()
+      },
+
+      editContainerButton: function(){
+        const value = currentLi.querySelector('.editInput').value
+        arrTask[currentLiIndex].name = value;
+        renderTask()
+      },
+
+      buttonCancel: function(){
+        editContainerButton.removeAttribute('style')
+        editInput.value = arrTask[currentLiIndex].name
+      },
+
+      checkButton: function(){
+        arrTask[currentLiIndex].completed = !arrTask[currentLiIndex].completed
+        if(arrTask[currentLiIndex].completed){
+          currentLi.querySelector('.fa-check').classList.remove('displayNone')
+        }else{
+          currentLi.querySelector('.fa-check').classList.add('displayNone')
+
+        }
+      }
+
+    }
+
+    if(actions[dataAction]){
+      actions[dataAction]()
+    }
   }
 
   formList.addEventListener('submit', function(e) {
