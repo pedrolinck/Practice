@@ -7,19 +7,34 @@
   const ul = document.getElementById('list');
   const lis = document.getElementsByTagName("li")
 
-  let arrTask = [
-    {
-      name: 'task',
-      createAt: Date.now(),
-      completed: false
-    }
-  ]
+  
 
   // function addEventLi(li){
   //   li.addEventListener('click', function(){
   //     console.log(this)
   //   })
   // }
+
+  let arrTask = saveData
+
+  function saveData(){
+    let taskData = localStorage.getItem("tasks");
+    taskData = JSON.parse(taskData)
+
+    return taskData && taskData.length ? taskData : [
+      {
+        name: 'task 1',
+        createAt: Date.now(),
+        completed: false
+      }
+    ]
+  }
+
+  function setNewData(){
+    localStorage.setItem('tasks', JSON.stringify(arrTask))
+  }
+
+  setNewData()
 
 
   function generateTask(obj){
@@ -97,6 +112,9 @@
       createAt: Date.now(),
       completed: false
     })
+
+  setNewData()
+
   }
 
   function clickUl(e){
@@ -128,12 +146,16 @@
       deleteButton: function(){
         arrTask.splice(currentLiIndex, 1)
         renderTask()
+        setNewData()
+
       },
 
       editContainerButton: function(){
         const value = currentLi.querySelector('.editInput').value
         arrTask[currentLiIndex].name = value;
         renderTask()
+        setNewData()
+
       },
 
       buttonCancel: function(){
@@ -143,12 +165,16 @@
 
       checkButton: function(){
         arrTask[currentLiIndex].completed = !arrTask[currentLiIndex].completed
-        if(arrTask[currentLiIndex].completed){
-          currentLi.querySelector('.fa-check').classList.remove('displayNone')
-        }else{
-          currentLi.querySelector('.fa-check').classList.add('displayNone')
+        
+        // if(arrTask[currentLiIndex].completed){
+        //   currentLi.querySelector('.fa-check').classList.remove('displayNone')
+        // }else{
+        //   currentLi.querySelector('.fa-check').classList.add('displayNone')
 
-        }
+        // }
+        setNewData()
+        renderTask()
+
       }
 
     }
