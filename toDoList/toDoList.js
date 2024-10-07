@@ -1,6 +1,45 @@
 ;(function(){
   "use strict"
 
+  function Task(name, completed, createdAt, updatedAt){
+		// crie uma funcao construtora chamada Task. 
+        // essa funcao recebe por parametro obrigatório o nome da tarefa
+        // também recebe tres parametros opcionais (completed, createdAt, updatedAt)
+        // o objeto retornado por essa funcao deve ter quatro propriedades:
+        //  - name - string - obrigatório, 
+        //  - completed - boolean - opcional, false é o default, 
+        //  - createdAt - timestamp - opcional, timestamp atual é o valor default) 
+        //  - updatedAt - timestamp - opcional, null é o valor default
+        // o objeto retornado por essa funcao deve ter um método chamado toggleDone, que deve inverter o boolean completed
+	}
+
+	let arrTasks = [
+		{
+			name: "task 1",
+			completed: true,
+			createdAt: 1592667375012,
+			updatedAt: null
+		},
+		{
+			name: "task 2",
+			createdAt: 1581667345723,
+			updatedAt: 1592667325018
+		},
+		{
+			name: "task 3",
+			completed: true,
+			createdAt: 1592667355018,
+			updatedAt: 1593677457010
+		}
+	]
+
+
+    // a partir de um array de objetos literais, crie um array contendo instancias de Tasks. 
+    // Essa array deve chamar arrInstancesTasks
+	// const arrInstancesTasks = DESCOMENTE ESSA LINHA E RESOLVA O ENUNCIADO
+
+
+
   //store variables
   const inputList = document.getElementById('input-item');
   const formList = document.getElementById('form');
@@ -101,19 +140,14 @@
 
   function renderTask(){
     ul.innerHTML = ''
-    arrTask.forEach(task => {
+    arrInstancesTasks.forEach(task => {
       ul.appendChild(generateTask(task))
     });
   }
 
   function addTask(task){
-    arrTask.push({
-      name: task,
-      createAt: Date.now(),
-      completed: false
-    })
-
-  setNewData()
+    // add new task instance
+    renderTask()
 
   }
 
@@ -144,7 +178,7 @@
       },
 
       deleteButton: function(){
-        arrTask.splice(currentLiIndex, 1)
+        arrInstancesTasks.splice(currentLiIndex, 1)
         renderTask()
         setNewData()
 
@@ -152,7 +186,7 @@
 
       editContainerButton: function(){
         const value = currentLi.querySelector('.editInput').value
-        arrTask[currentLiIndex].name = value;
+        arrInstancesTasks[currentLiIndex].name = value;
         renderTask()
         setNewData()
 
@@ -160,19 +194,11 @@
 
       buttonCancel: function(){
         editContainerButton.removeAttribute('style')
-        editInput.value = arrTask[currentLiIndex].name
+        editInput.value = arrInstancesTasks[currentLiIndex].name
       },
 
       checkButton: function(){
-        arrTask[currentLiIndex].completed = !arrTask[currentLiIndex].completed
-        
-        // if(arrTask[currentLiIndex].completed){
-        //   currentLi.querySelector('.fa-check').classList.remove('displayNone')
-        // }else{
-        //   currentLi.querySelector('.fa-check').classList.add('displayNone')
-
-        // }
-        setNewData()
+        // need use method toogleDone from right object
         renderTask()
 
       }
