@@ -11,6 +11,13 @@
         //  - createdAt - timestamp - opcional, timestamp atual é o valor default) 
         //  - updatedAt - timestamp - opcional, null é o valor default
         // o objeto retornado por essa funcao deve ter um método chamado toggleDone, que deve inverter o boolean completed
+    this.name = name
+    this.completed = false
+    this.createdAt = Date.now()
+    this.updatedAt = null
+    this.toogleDone = function (){
+      return this.completed = !this.completed
+    }
 	}
 
 	let arrTasks = [
@@ -36,8 +43,13 @@
 
     // a partir de um array de objetos literais, crie um array contendo instancias de Tasks. 
     // Essa array deve chamar arrInstancesTasks
-	// const arrInstancesTasks = DESCOMENTE ESSA LINHA E RESOLVA O ENUNCIADO
 
+	  const arrInstancesTasks = arrTasks.map(task => {
+      const {name, completed, createdAt, updatedAt} = task
+      return new Task(name, completed, createdAt, updatedAt)
+    })
+    
+    
 
 
   //store variables
@@ -54,7 +66,7 @@
   //   })
   // }
 
-  let arrTask = saveData
+  /*let arrTask = saveData
 
   function saveData(){
     let taskData = localStorage.getItem("tasks");
@@ -73,7 +85,7 @@
     localStorage.setItem('tasks', JSON.stringify(arrTask))
   }
 
-  setNewData()
+  setNewData()*/
 
 
   function generateTask(obj){
@@ -113,13 +125,13 @@
      
     editContainerButton.className = "editContainer"
     editContainerButton.setAttribute('data-action', 'editContainer')
+    editContainerButton.appendChild(editInput)
 
 
     editInput.setAttribute('type', 'text')
     editInput.className = "editInput"
     editInput.value = obj.name
 
-    editContainerButton.appendChild(editInput)
 
     buttonEdit.className = "buttonEdit"
     buttonEdit.textContent = "Edit"
@@ -140,13 +152,14 @@
 
   function renderTask(){
     ul.innerHTML = ''
-    arrInstancesTasks.forEach(task => {
-      ul.appendChild(generateTask(task))
+    arrInstancesTasks.forEach(taskObj => {
+      ul.appendChild(generateTask(taskObj))
     });
   }
 
   function addTask(task){
     // add new task instance
+    arrInstancesTasks.push(new Task(task))
     renderTask()
 
   }
@@ -166,10 +179,10 @@
 
     const actions = {
       editButton: function (){
-        const editContainerButton = currentLi.querySelector('.editContainerButton');
+        const editContainerButton = currentLi.querySelector('.editContainer');
 
-        [...ul.querySelectorAll('.editContainerButton')].forEach(container => {
-          container.removeAttribute("style")
+        [...ul.querySelectorAll('.editContainer')].forEach(container => {
+          container.removeAttribute('style')
         })
 
         editContainerButton.style.display = 'flex';
@@ -180,7 +193,7 @@
       deleteButton: function(){
         arrInstancesTasks.splice(currentLiIndex, 1)
         renderTask()
-        setNewData()
+        // setNewData()
 
       },
 
@@ -188,7 +201,7 @@
         const value = currentLi.querySelector('.editInput').value
         arrInstancesTasks[currentLiIndex].name = value;
         renderTask()
-        setNewData()
+        // setNewData()
 
       },
 
@@ -199,6 +212,7 @@
 
       checkButton: function(){
         // need use method toogleDone from right object
+        arrInstancesTasks[currentLiIndex].toogleDone()
         renderTask()
 
       }
